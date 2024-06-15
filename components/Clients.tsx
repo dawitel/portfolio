@@ -4,6 +4,7 @@ import React from "react";
 
 import { companies, testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
+import Image from "next/image";
 
 const Clients = () => {
   return (
@@ -30,15 +31,18 @@ const Clients = () => {
             <React.Fragment key={company.id}>
               <div className="flex md:max-w-60 max-w-32 gap-2">
                 {/* TODO: migrate from native image tags to Image from next */}
-                <img
-                  src={company.img}
+                <Image
+                  src={company.img.link}
                   alt={company.name}
+                  height={10}
+                  width={10}
                   className="md:w-10 w-5"
                 />
-                <img
-                  src={company.nameImg}
+                <Image
+                  src={company.img.nameImg}
                   alt={company.name}
-                  width={company.id === 4 || company.id === 5 ? 100 : 150}
+                  height={company.img.height}
+                  width={company.img.width}
                   className="md:w-24 w-20"
                 />
               </div>

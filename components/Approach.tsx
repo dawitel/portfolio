@@ -7,7 +7,9 @@ const Approach = () => {
   return (
     <section className="w-full py-20">
       <h1 className="heading">
-        My <span className="text-purple">approach</span>
+        How I <span className="text-purple">turn </span>your
+        <span className="text-purple"> ideas </span>into
+        <span className="text-purple"> reality</span>
       </h1>
       {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
@@ -30,7 +32,7 @@ const Approach = () => {
           icon={<AceternityIcon order="Phase 2" />}
           des="Once we agree on the plan, I cue my lofi playlist and dive into
           coding. From initial sketches to polished code, I keep you updated in 
-          every step of the way."
+          every step of the way of building the first MVP."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -48,11 +50,11 @@ const Approach = () => {
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
-          title="Development & Launch"
+          title="Iteration & Launch"
           icon={<AceternityIcon order="Phase 3" />}
-          des="This is where the magic happens! Based on the approved design, 
-          I'll translate everything into functional code, building your website
-          from the ground up."
+          des="After the first shippmet of the first MVP, I collect your feedack and iterate over the 
+                product to perfect it. When you get satisfied with the version of the product I will deploy it and 
+                maintain it for free for the first 2 months."
         >
           <CanvasRevealEffect
             animationSpeed={3}

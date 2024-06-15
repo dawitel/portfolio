@@ -4,12 +4,14 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import Image from "next/image";
 
 const RecentProjects = () => {
+ 
   return (
     <div className="py-20">
       <h1 className="heading">
-        A small selection of{" "}
+        A small selection of my{" "}
         <span className="text-purple">recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
@@ -19,7 +21,7 @@ const RecentProjects = () => {
             key={item.id}
           >
             <PinContainer
-              title="/dawiteliaskassaye.com"
+              title="github.com/dawitel"
               href="https://twitter.com/@DawitEliasge"
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
@@ -27,11 +29,13 @@ const RecentProjects = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <Image src="/bg.png" height={50} width={50} alt="bgimg" />
                 </div>
-                <img
-                  src={item.img}
+                <Image
+                  src={item.img.src}
                   alt="cover"
+                  height={item.img.height}
+                  width={item.img.width}
                   className="z-10 absolute bottom-0"
                 />
               </div>
@@ -61,14 +65,18 @@ const RecentProjects = () => {
                       }}
                     >
                       {/* TODO: migrate from native image taga to Image from Next JS */}
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Image src={icon} width={45} height={45} alt="icon5" className="p-2" />
                     </div>
                   ))}
                 </div>
 
                 <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+                    <button>
+                      <a href={item.link}>
+                        {item.isRepoBased ? "On GitHub" : "Check Live Site"}
+                      </a>
+                    </button>
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>

@@ -9,17 +9,16 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
+type FloatingNavProps = {
   navItems: {
     name: string;
     link: string;
     icon?: JSX.Element;
   }[];
   className?: string;
-}) => {
+};
+
+export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
   const { scrollYProgress } = useScroll();
 
   // set true for the initial state so that nav bar is visible in the hero section

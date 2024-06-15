@@ -6,23 +6,42 @@ import Lottie from "react-lottie";
 
 import { cn } from "@/lib/utils";
 
-
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import Image from "next/image";
 
-export const BentoGrid = ({
-  className,
-  children,
-}: {
+type BentoGridProps = {
   className?: string;
   children?: React.ReactNode;
-}) => {
+};
+
+type BentoGridItemProps = {
+  className?: string;
+  id: number;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  img?: {
+    height: number;
+    width: number;
+    src: string;
+    alt: string;
+  };
+  imgClassName?: string;
+  titleClassName?: string;
+  spareImg?: {
+    height: number;
+    width: number;
+    src: string;
+    alt: string;
+  };
+};
+
+export const BentoGrid = ({ className, children }: BentoGridProps) => {
   return (
     <div
       className={cn(
-        // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
         "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
         className
       )}
@@ -37,23 +56,14 @@ export const BentoGridItem = ({
   id,
   title,
   description,
-  //   remove unecessary things here
   img,
   imgClassName,
   titleClassName,
   spareImg,
-}: {
-  className?: string;
-  id: number;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  img?: string;
-  imgClassName?: string;
-  titleClassName?: string;
-  spareImg?: string;
-}) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["Beego", "NextJS", "GraphQL"];
+}: BentoGridItemProps) => {
+
+  const leftLists = ["React JS", "Express", "Typescript", "AWS"];
+  const rightLists = ["Beego", "Next JS", "GraphQL", "Go"];
 
   const [copied, setCopied] = useState(false);
 
@@ -91,21 +101,26 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
-              src={img}
-              alt={img}
+            <Image
+              height={img.height}
+              width={img.width}
+              src={img.src}
+              alt={img.alt}
               className={cn(imgClassName, "object-cover object-center ")}
             />
           )}
         </div>
         <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
+          className={`absolute right-0 -bottom-5 ${
+            id === 5 && "w-full opacity-80"
+          } `}
         >
           {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
+            <Image
+              width={spareImg.width}
+              height={spareImg.height}
+              src={spareImg.src}
+              alt={spareImg.alt}
               //   width={220}
               className="object-cover object-center w-full h-full"
             />
@@ -176,8 +191,9 @@ export const BentoGridItem = ({
               {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
               {/* add handleCopy() for the copy the text */}
               <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? "block" : "block"
+                }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
                 <Lottie options={defaultOptions} height={200} width={400} />
