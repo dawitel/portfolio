@@ -371,8 +371,8 @@ export const workExperience = [
   },
   {
     id: 4,
-    title: "Fullstack Enginneer - veritas.ai",
-    desc: "Developed and maintained user-facing and backend features using modern technologies like Next JS and gRPC.",
+    title: "Fullstack Enginneer - optimetrics.ai",
+    desc: "Developed and maintained user-facing and backend features for a workflows automation tool using modern technologies like Next JS and gRPC.",
     className: "md:col-span-2",
     thumbnail: {
       height: 87,
