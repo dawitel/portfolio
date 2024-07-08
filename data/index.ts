@@ -5,6 +5,7 @@ export const navItems = [
   { name: "Projects", link: "#projects" },
   { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
+  { name: "Blog", link: "/" },
 ];
 
 export const gridItems = [
@@ -348,8 +349,8 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "ArifPay mobile App Dev - ArifPay",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Fullstack engineer - verasity.ai",
+    desc: "Leadading the implementation of a feature rich AI-enabled SaaS platform for analyzing marketing sites and much more.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: {
       height: 97,
@@ -359,8 +360,8 @@ export const workExperience = [
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app and play store.",
+    title: "Freelance web App Dev Project",
+    desc: "Led the dev of a Fullstack web app for a client using Next JS and a heavier Go backend, from initial concept to deployment on AWS.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: {
       height: 98,
