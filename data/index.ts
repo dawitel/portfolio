@@ -72,7 +72,7 @@ export const gridItems = [
   {
     id: 4,
     title: "Tech enthusiast with immense passion for development.",
-    description: "Living to change the world with the magic of programming",
+    description: "Living to change the world",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -254,7 +254,7 @@ export const testimonials = [
     name: "Bereket Kefyalew",
     title: "CTO, Camara, Inc.",
     img: {
-      link: "/profile.svg",
+      link: "",
       alt: "BK",
       width: 50,
       height: 50,
@@ -266,7 +266,7 @@ export const testimonials = [
     name: "Harun Pravan",
     title: "Director @ Progigy infotech",
     img: {
-      link: "/profile.svg",
+      link: "",
       alt: "HP",
       width: 50,
       height: 50,
@@ -278,7 +278,7 @@ export const testimonials = [
     name: "Wosen Alemayehu",
     title: "Director @ KB ackademy",
     img: {
-      link: "/profile.svg",
+      link: "",
       alt: "WA",
       width: 50,
       height: 50,
@@ -381,7 +381,7 @@ export const workExperience = [
     thumbnail: {
       height: 97,
       width: 98,
-      link: "/exp2.svg",
+      link: "/download.jpg",
     },
   },
   {
@@ -454,7 +454,7 @@ export const socialMedia = [
     id: 3,
     img: {
       alt: "UP",
-      link: "/upwork.svg",
+      link: "/upwork-1.svg",
       height: 18,
       width: 19,
     },
