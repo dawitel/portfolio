@@ -3,10 +3,21 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import { IoCloudDownloadSharp } from "react-icons/io5";
 
 const Hero = () => {
+  const handleDownloadClick = () => {
+    // This function will be triggered when the button is clicked
+    const resumeUrl = "/dawit-elias-updated-resume.pdf"; // Path to your resume file
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "dawit-elias-updated-resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20 pt-32">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -57,14 +68,23 @@ const Hero = () => {
             <span className="text-yellow-400 font-extrabold">io</span>
             <span className="text-red-700 font-extrabold">pia</span>.
           </p>
-
-          <a href="#about">
-            <MagicButton
-              title="See the magic"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
+          <div className="flex gap-4">
+            <a href="#about">
+              <MagicButton
+                title="See the magic"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+            <a href="">
+              <MagicButton
+                title="Download my resume"
+                icon={<IoCloudDownloadSharp />}
+                position="right"
+                handleClick={handleDownloadClick}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
