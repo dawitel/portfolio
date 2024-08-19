@@ -46,18 +46,16 @@ const Hero = () => {
             Dynamic Web Magic with genuine taste
           </p>
 
-          {/**
-           *  Link: https://ui.aceternity.com/components/text-generate-effect
-           *
-           *  change md:text-6xl, add more responsive code
-           */}
           <TextGenerateEffect
             words="Transforming Concepts into Seamless User Experiences"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-xs md:text-lg lg:text-2xl">
-            Hi! I&apos;m Dawit, a Fullstack Software Engineer based in Ethiopia.
+            Hi! I&apos;m Dawit, a Fullstack Software Engineer based in{" "}
+            <span className="text-green-700 font-extrabold">Eth</span>
+            <span className="text-yellow-400 font-extrabold">io</span>
+            <span className="text-red-700 font-extrabold">pia</span>.
           </p>
 
           <a href="#about">

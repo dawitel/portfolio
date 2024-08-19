@@ -135,6 +135,34 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
+    title: "Bankerr.com - the all-in-one fiancial service provider",
+    des: "A platform where people can create and manage all of their bank accounts.",
+    img: {
+      src: "/p1.svg",
+      height: 300,
+      width: 464,
+      alt: "Project 1",
+    },
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    link: "https://bankerr-solutions.vercel.app/",
+    isRepoBased: false,
+  },
+  {
+    id: 2,
+    title: "Collabor8 - a realtime collaborative whiteboard",
+    des: "Built with Go (Golang), gRPC, and WebRTC, Collaor8 is web application where multiple users can draw on a shared whiteboard in real time, with low latency and high reliability.",
+    img: {
+      src: "/p2.svg",
+      height: 300,
+      width: 464,
+      alt: "Project 2",
+    },
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "https://github.com/dawitel/collabor8_backend",
+    isRepoBased: true,
+  },
+  {
+    id: 1,
     title: "Booking.com clone",
     des: "My first ever fullstack project using the MERN stack.",
     img: {
@@ -158,7 +186,7 @@ export const projects = [
       alt: "Project 2",
     },
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://discord.vercel.com",
+    link: "https://discord-clone.vercel.app/",
     isRepoBased: false,
   },
   {
@@ -222,12 +250,12 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Dawit was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Dawit's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Dawit is the ideal partner.",
-    name: "Michael Johnson",
+      "Throughout his internship, Dawit showed an exceptional aptitude for software development. He quickly adapted to our tech stack and contributed to several critical projects, often going above and beyond what was expected. His code was always clean, efficient, and well-documented. Beyond his technical skills, Dawit also displayed strong teamwork and leadership qualities, making him a standout intern in our program.",
+    name: "Bereket Kefyalew",
     title: "CTO, Camara, Inc.",
     img: {
       link: "/profile.svg",
-      alt: "MJ",
+      alt: "BK",
       width: 50,
       height: 50,
     },
@@ -235,51 +263,27 @@ export const testimonials = [
   {
     quote:
       "Collaborating with Dawit was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Dawit's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Dawit is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of Androgen Technologies",
+    name: "Harun Pravan",
+    title: "Director @ Progigy infotech",
     img: {
       link: "/profile.svg",
-      alt: "MJ",
+      alt: "HP",
       width: 50,
       height: 50,
     },
   },
   {
     quote:
-      "Collaborating with Dawit was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Dawit's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Dawit is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of Androgen Technologies",
+      "We were extremely fortunate to have Dawit develop the backend for our school's chat application. His work was nothing short of outstanding. He designed and implemented a system that has transformed how our students and staff communicate, ensuring that the platform is both reliable and secure. Dawit demonstrated a deep understanding of our needs and was able to deliver a solution that exceeded our expectations. His professionalism, technical expertise, and dedication to the project were evident at every stage.",
+    name: "Wosen Alemayehu",
+    title: "Director @ KB ackademy",
     img: {
       link: "/profile.svg",
-      alt: "MJ",
+      alt: "WA",
       width: 50,
       height: 50,
     },
-  },
-  {
-    quote:
-      "Collaborating with Dawit was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Dawit's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Dawit is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of Androgen Technologies",
-    img: {
-      link: "/profile.svg",
-      alt: "MJ",
-      width: 50,
-      height: 50,
-    },
-  },
-  {
-    quote:
-      "Collaborating with Dawit was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Dawit's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Dawit is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of Androgen Technologies",
-    img: {
-      link: "/profile.svg",
-      alt: "MJ",
-      width: 50,
-      height: 50,
-    },
-  },
+  }
 ];
 
 export const companies = [
@@ -338,7 +342,7 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern - Camara, Inc",
+    title: "Backend Engineer Intern - Camara, Inc",
     desc: "Assisted in the development of a web-based platform using Next JS, enhancing interactivity & performace.",
     className: "md:col-span-2",
     thumbnail: {
@@ -348,14 +352,14 @@ export const workExperience = [
     },
   },
   {
-    id: 2,
-    title: "Fullstack engineer - verasity.ai",
-    desc: "Leadading the implementation of a feature rich AI-enabled SaaS platform for analyzing marketing sites and much more.",
-    className: "md:col-span-2", // change to md:col-span-2
+    id: 4,
+    title: "Fullstack Enginneering Intern - Prodigy InfoTech",
+    desc: "Developed and maintained user-facing and backend features for a workflows automation tool using modern technologies like Next JS and gRPC.",
+    className: "md:col-span-2",
     thumbnail: {
-      height: 97,
-      width: 98,
-      link: "/exp2.svg",
+      height: 87,
+      width: 123,
+      link: "/exp4.svg",
     },
   },
   {
@@ -370,14 +374,36 @@ export const workExperience = [
     },
   },
   {
-    id: 4,
-    title: "Fullstack Enginneer - optimetrics.ai",
-    desc: "Developed and maintained user-facing and backend features for a workflows automation tool using modern technologies like Next JS and gRPC.",
-    className: "md:col-span-2",
+    id: 2,
+    title: "Golang backend engineer - Addispay Financial Tecbologies SC.",
+    desc: "Building and managing mivroservices for the backend infrastructure and databases for a paymaent gateway.",
+    className: "md:col-span-2", // change to md:col-span-2
     thumbnail: {
-      height: 87,
-      width: 123,
+      height: 97,
+      width: 98,
+      link: "/exp2.svg",
+    },
+  },
+  {
+    id: 3,
+    title: "Freelance backend development",
+    desc: "Built the backend for a realtime chat app for a school leveraging the right use case of web sockets and Web RTC.",
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: {
+      height: 98,
+      width: 103,
       link: "/exp4.svg",
+    },
+  },
+  {
+    id: 2,
+    title: "Fullstack engineer - Bankerr.com",
+    desc: "Collaborating with 2 senior software engineers, we are currently engaged in building a finacial soluiton that would change how things work completely.",
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: {
+      height: 97,
+      width: 98,
+      link: "/exp1.svg",
     },
   },
 ];
@@ -413,7 +439,7 @@ export const socialMedia = [
     },
     link: "https://www.linkedin.com/in/dawit-gebremariam-36bb8b2a6/",
   },
- 
+
   {
     id: 3,
     img: {
@@ -423,5 +449,15 @@ export const socialMedia = [
       width: 19,
     },
     link: "https://www.linkedin.com/in/dawit-gebremariam-36bb8b2a6/",
-  }
+  },
+  {
+    id: 3,
+    img: {
+      alt: "UP",
+      link: "/upwork.svg",
+      height: 18,
+      width: 19,
+    },
+    link: "https://www.upwork.com/freelancers/~01424fe0344391f815",
+  },
 ];
