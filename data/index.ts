@@ -252,9 +252,9 @@ export const testimonials = [
     quote:
       "Throughout his internship, Dawit showed an exceptional aptitude for software development. He quickly adapted to our tech stack and contributed to several critical projects, often going above and beyond what was expected. His code was always clean, efficient, and well-documented. Beyond his technical skills, Dawit also displayed strong teamwork and leadership qualities, making him a standout intern in our program.",
     name: "Bereket Kefyalew",
-    title: "CTO, Camara, Inc.",
+    title: "CTO, Camara Education",
     img: {
-      link: "",
+      link: "/user.png",
       alt: "BK",
       width: 50,
       height: 50,
@@ -266,7 +266,7 @@ export const testimonials = [
     name: "Harun Pravan",
     title: "Director @ Progigy infotech",
     img: {
-      link: "",
+      link: "/user.png",
       alt: "HP",
       width: 50,
       height: 50,
@@ -278,12 +278,12 @@ export const testimonials = [
     name: "Wosen Alemayehu",
     title: "Director @ KB ackademy",
     img: {
-      link: "",
+      link: "/user.png",
       alt: "WA",
       width: 50,
       height: 50,
     },
-  }
+  },
 ];
 
 export const companies = [
@@ -459,5 +459,15 @@ export const socialMedia = [
       width: 19,
     },
     link: "https://www.upwork.com/freelancers/~01424fe0344391f815",
+  },
+  {
+    id: 3,
+    img: {
+      alt: "TG",
+      link: "/telegram-1.svg",
+      height: 18,
+      width: 19,
+    },
+    link: "https://t.me/dawiteliaskassaye",
   },
 ];
