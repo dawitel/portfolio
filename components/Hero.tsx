@@ -63,7 +63,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-xs md:text-lg lg:text-2xl">
-            Hi! I&apos;m Dawit, a Fullstack Software Engineer based in{" "}
+            Hi! I&apos;m Dawit, a Software Engineer based in{" "}
             <span className="text-green-700 font-extrabold">Eth</span>
             <span className="text-yellow-400 font-extrabold">io</span>
             <span className="text-red-700 font-extrabold">pia</span>.

@@ -92,7 +92,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title:"Currently building an AI enabled marketing SaaS Product called verasity.ai with tons of features publicly on X ",
+    title: "Making real world changes via the keyboard!!!",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -138,7 +138,7 @@ export const projects = [
     title: "Bankerr.com - the all-in-one fiancial service provider",
     des: "A platform where people can create and manage all of their bank accounts.",
     img: {
-      src: "/p1.svg",
+      src: "/akerr.png",
       height: 300,
       width: 464,
       alt: "Project 1",
@@ -166,7 +166,7 @@ export const projects = [
     title: "Booking.com clone",
     des: "My first ever fullstack project using the MERN stack.",
     img: {
-      src: "/p1.svg",
+      src: "/ookig.png",
       height: 300,
       width: 464,
       alt: "Project 1",
@@ -194,7 +194,7 @@ export const projects = [
     title: "An OS level file system",
     des: "This is where I leared a lot about computers and low level programming. I built this project using GO and it was really hardd...",
     img: {
-      src: "/p3.svg",
+      src: "",
       height: 300,
       width: 464,
       alt: "Project 3",
@@ -208,7 +208,7 @@ export const projects = [
     title: "Fully fledged REDIS - in memory database",
     des: "The secnod time I suffered the most... Basically I flet like the God of coding at this point until I realized the first time it was uilt using C (I did it using typescript, yeah) ",
     img: {
-      src: "/p4.svg",
+      src: "",
       height: 300,
       width: 464,
       alt: "Project 4",
@@ -222,7 +222,7 @@ export const projects = [
     title: "A vercel clone - yeah vercel!",
     des: "The most famous platform for deploymet, vercel got clonned by me. I built it after I read aout its underlying architecture from a random blog",
     img: {
-      src: "/p3.svg",
+      src: "/vercel.png",
       height: 300,
       width: 464,
       alt: "Project 5",
@@ -250,9 +250,9 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Throughout his internship, Dawit showed an exceptional aptitude for software development. He quickly adapted to our tech stack and contributed to several critical projects, often going above and beyond what was expected. His code was always clean, efficient, and well-documented. Beyond his technical skills, Dawit also displayed strong teamwork and leadership qualities, making him a standout intern in our program.",
-    name: "Bereket Kefyalew",
-    title: "CTO, Camara Education",
+      "How do you give someone six stars? This is the only question I have since this developer displayed exceptional competence and skill. There is no better Go dev here...... well done.",
+    name: "Christopher Jennings",
+    title: "CEO, NextLayer Technologies",
     img: {
       link: "/user.png",
       alt: "BK",
@@ -272,18 +272,6 @@ export const testimonials = [
       height: 50,
     },
   },
-  {
-    quote:
-      "We were extremely fortunate to have Dawit develop the backend for our school's chat application. His work was nothing short of outstanding. He designed and implemented a system that has transformed how our students and staff communicate, ensuring that the platform is both reliable and secure. Dawit demonstrated a deep understanding of our needs and was able to deliver a solution that exceeded our expectations. His professionalism, technical expertise, and dedication to the project were evident at every stage.",
-    name: "Wosen Alemayehu",
-    title: "Director @ KB ackademy",
-    img: {
-      link: "/user.png",
-      alt: "WA",
-      width: 50,
-      height: 50,
-    },
-  },
 ];
 
 export const companies = [
@@ -294,8 +282,8 @@ export const companies = [
       nameImg: "/cloudName.svg",
       link: "/cloud.svg",
       height: 10,
-      width: 150, 
-    }
+      width: 150,
+    },
   },
   {
     id: 2,
@@ -304,8 +292,8 @@ export const companies = [
       nameImg: "/cloudName.svg",
       link: "/app.svg",
       height: 10,
-      width: 150, 
-    }
+      width: 150,
+    },
   },
   {
     id: 3,
@@ -314,8 +302,8 @@ export const companies = [
       nameImg: "/hostName.svg",
       link: "/host.svg",
       height: 10,
-      width: 150, 
-    }
+      width: 150,
+    },
   },
   {
     id: 4,
@@ -324,8 +312,8 @@ export const companies = [
       nameImg: "/streamName.svg",
       link: "/s.svg",
       height: 10,
-      width: 100, 
-    }
+      width: 100,
+    },
   },
   {
     id: 5,
@@ -334,15 +322,15 @@ export const companies = [
       nameImg: "/dockerName.svg",
       link: "/dock.svg",
       height: 10,
-      width: 100, 
-    }
+      width: 100,
+    },
   },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Backend Engineer Intern - Camara, Inc",
+    title: "Backend Engineer Intern - Camara Education",
     desc: "Assisted in the development of a web-based platform using Next JS, enhancing interactivity & performace.",
     className: "md:col-span-2",
     thumbnail: {
@@ -364,8 +352,8 @@ export const workExperience = [
   },
   {
     id: 3,
-    title: "Freelance web App Dev Project",
-    desc: "Led the dev of a Fullstack web app for a client using Next JS and a heavier Go backend, from initial concept to deployment on AWS.",
+    title: "Freelancing",
+    desc: "Landed multiple contracts that span range of projects, ranging from simple wesbcrapers to highly sophisticated crypto betting systesm",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: {
       height: 98,
@@ -375,8 +363,9 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "Golang backend engineer - Addispay Financial Tecbologies SC.",
-    desc: "Building and managing mivroservices for the backend infrastructure and databases for a paymaent gateway.",
+    title:
+      "Senior Golang backend engineer - Addispay Financial Tecbologies SC.",
+    desc: "Designing, Building and Maintaining multiple  micro-services that require extreme levels of request processing and error tolerance.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: {
       height: 97,
@@ -385,20 +374,9 @@ export const workExperience = [
     },
   },
   {
-    id: 3,
-    title: "Freelance backend development",
-    desc: "Built the backend for a realtime chat app for a school leveraging the right use case of web sockets and Web RTC.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: {
-      height: 98,
-      width: 103,
-      link: "/exp4.svg",
-    },
-  },
-  {
     id: 2,
-    title: "Fullstack engineer - Bankerr.com",
-    desc: "Collaborating with 2 senior software engineers, we are currently engaged in building a finacial soluiton that would change how things work completely.",
+    title: "Solidity and Golang developer - Hire Armada",
+    desc: "Collaborating senior software engineers, we are currently engaged in building a solution to safeguard the projects that Ethiopian freelancers land with escrow service.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: {
       height: 97,
