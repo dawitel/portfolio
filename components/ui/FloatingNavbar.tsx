@@ -9,35 +9,42 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type FloatingNavProps = {
-  navItems: {
+type NavItem = {
+  name: string;
+  link: string;
+  icon?: JSX.Element;
+  dropdowns?: Array<{
     name: string;
     link: string;
     icon?: JSX.Element;
-  }[];
+    subDropdowns?: Array<{
+      name: string;
+      link: string;
+      icon?: JSX.Element;
+    }>;
+  }>;
+};
+
+type FloatingNavProps = {
+  navItems: NavItem[];
   className?: string;
 };
 
 export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
   const { scrollYProgress } = useScroll();
-
-  // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
+  const [hoveredDropdown, setHoveredDropdown] = useState<number | null>(null);
+  const [hoveredSubDropdown, setHoveredSubDropdown] = useState<string | null>(
+    null,
+  );
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
-
+      let direction = current - scrollYProgress.getPrevious()!;
       if (scrollYProgress.get() < 0.05) {
-        // also set true for the initial state
         setVisible(true);
       } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+        setVisible(direction < 0);
       }
     }
   });
@@ -45,23 +52,12 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
+        initial={{ opacity: 1, y: -100 }}
+        animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
+        transition={{ duration: 0.2 }}
         className={cn(
-          // change rounded-full to rounded-lg
-          // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
-          // change  pr-2 pl-8 py-2 to px-10 py-5
           "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
-          className
+          className,
         )}
         style={{
           backdropFilter: "blur(16px) saturate(180%)",
@@ -70,25 +66,130 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
           border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            {/* add !cursor-pointer */}
-            {/* remove hidden sm:block for the mobile responsive */}
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
-        ))}
-        {/* remove this login btn */}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
+        {navItems.map((navItem, idx) => {
+          if (navItem.dropdowns?.length) {
+            return (
+              <div
+                key={`dropdown-${idx}`}
+                className="relative"
+                onMouseEnter={() => setHoveredDropdown(idx)}
+                onMouseLeave={() => {
+                  setHoveredDropdown(null);
+                  setHoveredSubDropdown(null);
+                }}
+              >
+                <div
+                  className={cn(
+                    "relative dark:text-white items-center flex space-x-1 text-white dark:hover:text-neutral-300 hover:text-neutral-500 cursor-pointer",
+                  )}
+                >
+                  <span className="block sm:hidden">{navItem.icon}</span>
+                  <span className="text-sm">{navItem.name}</span>
+                  <span className="text-xs ml-1 transition-transform duration-200">
+                    {navItem.dropdowns ? " ▼" : ""}
+                  </span>
+                </div>
+
+                <AnimatePresence>
+                  {hoveredDropdown === idx && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full left-0 mt-2 min-w-[200px] rounded-lg shadow-lg"
+                      style={{
+                        backdropFilter: "blur(16px) saturate(180%)",
+                        backgroundColor: "rgba(17, 25, 40, 0.95)",
+                        border: "1px solid rgba(255, 255, 255, 0.125)",
+                      }}
+                    >
+                      <div className="p-2 space-y-2">
+                        {navItem.dropdowns.map((dropdownItem, dIdx) => (
+                          <div
+                            key={`dropdown-item-${dIdx}`}
+                            className="relative"
+                            onMouseEnter={() =>
+                              setHoveredSubDropdown(`${idx}-${dIdx}`)
+                            }
+                            onMouseLeave={() => setHoveredSubDropdown(null)}
+                          >
+                            <Link
+                              href={dropdownItem.link}
+                              className="flex items-center justify-between space-x-2 text-white hover:bg-white/10 rounded-md p-2 transition-colors"
+                            >
+                              <div className="flex items-center space-x-2">
+                                {dropdownItem.icon && (
+                                  <span>{dropdownItem.icon}</span>
+                                )}
+                                <span className="text-sm">
+                                  {dropdownItem.name}
+                                </span>
+                              </div>
+                              {dropdownItem.subDropdowns && (
+                                <span className="text-xs">▶</span>
+                              )}
+                            </Link>
+
+                            {dropdownItem.subDropdowns && (
+                              <AnimatePresence>
+                                {hoveredSubDropdown === `${idx}-${dIdx}` && (
+                                  <motion.div
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -10 }}
+                                    className="absolute left-full top-0 ml-1 min-w-[200px] rounded-lg shadow-lg"
+                                    style={{
+                                      backdropFilter:
+                                        "blur(16px) saturate(180%)",
+                                      backgroundColor: "rgba(17, 25, 40, 0.95)",
+                                      border:
+                                        "1px solid rgba(255, 255, 255, 0.125)",
+                                    }}
+                                  >
+                                    <div className="p-2 space-y-2">
+                                      {dropdownItem.subDropdowns.map(
+                                        (subItem, sIdx) => (
+                                          <Link
+                                            key={`sub-dropdown-item-${sIdx}`}
+                                            href={subItem.link}
+                                            className="flex items-center space-x-2 text-white hover:bg-white/10 rounded-md p-2 transition-colors"
+                                          >
+                                            {subItem.icon && (
+                                              <span>{subItem.icon}</span>
+                                            )}
+                                            <span className="text-sm">
+                                              {subItem.name}
+                                            </span>
+                                          </Link>
+                                        ),
+                                      )}
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          }
+          return (
+            <Link
+              key={`link-${idx}`}
+              href={navItem.link}
+              className={cn(
+                "relative dark:text-white items-center flex space-x-1 text-white dark:hover:text-neutral-300 hover:text-neutral-500",
+              )}
+            >
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="text-sm !cursor-pointer">{navItem.name}</span>
+            </Link>
+          );
+        })}
       </motion.div>
     </AnimatePresence>
   );

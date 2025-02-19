@@ -1,11 +1,141 @@
 import { link } from "fs";
 
 export const navItems = [
+  { name: "Home", link: "/" },
   { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
+  {
+    name: "AI Services",
+    link: "#ai-services",
+    dropdowns: [
+      {
+        name: "AI development",
+        link: "#ml",
+        subDropdowns: [
+          { name: "AI SaaS Product Development", link: "/ml-anomaly" },
+          { name: "AI Agents development", link: "/ml-vision" },
+          { name: "Blockchain AI Development", link: "/ml-recommendations" },
+        ],
+      },
+      {
+        name: "Generative AI",
+        link: "#nlp",
+        subDropdowns: [
+          { name: "Chatbot Development", link: "/nlp-chatbots" },
+          { name: "Solutions For Different Sectors", link: "/nlp-sentiment" },
+          { name: "Data Proccessing", link: "/nlp-generation" },
+          { name: "Translation Systems", link: "/nlp-translation" },
+        ],
+      },
+      {
+        name: "AI Integration",
+        link: "#ai-integration",
+        subDropdowns: [
+          { name: "Workflow Automation", link: "/integration-automation" },
+          { name: "Legacy System Modernization", link: "/integration-legacy" },
+          { name: "API Development And Integration", link: "/integration-api" },
+        ],
+      },
+      {
+        name: "Custom AI Product Development",
+        link: "#ai-integration",
+      },
+      {
+        name: "Consultancy",
+        link: "#ai-integration",
+      },
+    ],
+  },
+  {
+    name: "Web3 Solutions",
+    link: "#web3",
+    dropdowns: [
+      {
+        name: "Crypto Development",
+        link: "#blockchain",
+        subDropdowns: [
+          { name: "Crypto Currency Development", link: "/blockchain-ethereum" },
+          { name: "Token Development", link: "/blockchain-hyperledger" },
+          { name: "ICO Development", link: "/blockchain-nft" },
+          { name: "IDO Development", link: "/blockchain-daos" },
+          { name: "Solana Development", link: "/blockchain-daos" },
+        ],
+      },
+      {
+        name: "DeFi Solutions",
+        link: "#defi",
+        subDropdowns: [
+          { name: "DEX Development", link: "/defi-dex" },
+          { name: "DeFi Token Development", link: "/defi-staking" },
+          { name: "DeFi Platform Development", link: "/defi-staking" },
+          { name: "Yield Farming Protocols", link: "/defi-yield" },
+          { name: "Lending Platforms", link: "/defi-lending" },
+          { name: "Staking Mechanisms", link: "/defi-staking" },
+        ],
+      },
+      {
+        name: "NFT Solutions",
+        link: "#web3-security",
+        subDropdowns: [
+          { name: "NFT Development", link: "/security-pentest" },
+          { name: "NFT Wallet Development", link: "/security-wallets" },
+          {
+            name: "NFT Minting Platform Development",
+            link: "/security-governance",
+          },
+          { name: "NFT Marketplace Development", link: "/security-audits" },
+        ],
+      },
+      {
+        name: "Web3 Security",
+        link: "#web3-security",
+        subDropdowns: [
+          { name: "Smart Contract Audits", link: "/security-audits" },
+          { name: "Penetration Testing", link: "/security-pentest" },
+          { name: "Wallet Security", link: "/security-wallets" },
+          { name: "Governance Models", link: "/security-governance" },
+          { name: "Fraud Detection", link: "/security-governance" },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Cloud Services",
+    link: "#cloud",
+    dropdowns: [
+      {
+        name: "Cloud Infrastructure",
+        link: "#cloud-infra",
+        subDropdowns: [
+          { name: "Multi-Cloud Strategy", link: "/cloud-multi" },
+          { name: "Serverless Architecture", link: "/cloud-serverless" },
+          { name: "Kubernetes Orchestration", link: "/cloud-k8s" },
+          { name: "Disaster Recovery", link: "/cloud-recovery" },
+        ],
+      },
+      {
+        name: "DevOps & Automation",
+        link: "#devops",
+        subDropdowns: [
+          { name: "CI/CD Pipelines Development", link: "/devops-cicd" },
+          { name: "Infrastructure as Code", link: "/devops-iac" },
+          { name: "Performance Optimization", link: "/devops-performance" },
+        ],
+      },
+      {
+        name: "Cloud Security",
+        link: "#cloud-security",
+        subDropdowns: [
+          { name: "IAM Solutions", link: "/security-iam" },
+          { name: "Data Encryption", link: "/security-encryption" },
+          { name: "Compliance Management", link: "/security-compliance" },
+          { name: "DDoS Protection", link: "/security-ddos" },
+        ],
+      },
+    ],
+  },
+  { name: "Portfolio", link: "/portfolio" },
   { name: "Blog", link: "/blog" },
+  { name: "Contact", link: "#contact" },
 ];
 
 export const gridItems = [

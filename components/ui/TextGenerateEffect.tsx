@@ -22,9 +22,9 @@ export const TextGenerateEffect = ({
       {
         duration: 2,
         delay: stagger(0.2),
-      }
+      },
     );
-  }, [scope.current]);
+  }, [scope.current, animate, wordsArray]);
 
   const renderWords = () => {
     return (
@@ -34,8 +34,9 @@ export const TextGenerateEffect = ({
             <motion.span
               key={word + idx}
               // change here if idx is greater than 3, change the text color to #CBACF9
-              className={` ${idx > 3 ? "text-purple" : "dark:text-white text-black"
-                } opacity-0`}
+              className={` ${
+                idx > 3 ? "text-purple" : " text-white"
+              } opacity-0`}
             >
               {word}{" "}
             </motion.span>

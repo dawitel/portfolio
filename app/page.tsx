@@ -17,11 +17,11 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
+        <Approach />
         <Grid />
         <RecentProjects />
         <Clients />
         <Experience />
-        <Approach />
         <Footer />
       </div>
     </main>
