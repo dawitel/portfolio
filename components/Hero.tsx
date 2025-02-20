@@ -1,5 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useState } from "react";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
@@ -8,6 +9,21 @@ import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import Image from "next/image";
 
 const Hero = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setMousePosition({ x, y });
+  };
+
+  // Create motion values for smooth animation
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useTransform(y, [0, 500], [5, -5]);
+  const rotateY = useTransform(x, [0, 500], [-5, 5]);
+
   return (
     <div className="pb-20 pt-36 relative">
       <Spotlight
@@ -21,7 +37,7 @@ const Hero = () => {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
 
-      <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left Text Section */}
           <div className="md:w-1/2 space-y-6">
@@ -41,45 +57,67 @@ const Hero = () => {
               in the digital age.
             </p>
 
-            <div className="flex sm:flex-row gap-4 mt-8">
+            <div className="flex sm:flex-row gap-6 mt-8">
               <MagicButton
-                title="Schedule a free consultation"
+                title="Schedule A Free Consultation"
                 icon={<FaRocket />}
                 position="right"
-                otherClasses="bg-blue-700 transition-colors pt-2 pb-2"
+                otherClasses="pt-3 pb-3 bg-blue-500 text-lg font-semibold"
               />
               <MagicButton
                 title="Explore Our Solutions"
                 icon={<IoShieldCheckmarkSharp />}
                 position="right"
-                otherClasses="border-purple-600 pt-3 pb-2 text-purple-600 hover:bg-purple-950/20"
+                otherClasses="pt-3 pb-3 text-lg font-semibold"
               />
             </div>
           </div>
 
-          {/* Animated Image Section */}
-          <motion.div
-            initial={{ y: -20 }}
-            animate={{ y: 20 }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
+          {/* Parallax Image Section */}
+          <div
             className="md:w-1/2 relative"
+            onMouseMove={handleMouseMove}
+            style={{ perspective: 1000 }}
           >
-            <div className="relative h-96 w-full rounded-2xl sm:block md:block overflow-hidden border-2 border-purple-500/30">
-              <Image
-                src="/herorr.jpg" // Replace with your company image
-                alt="Web3 & AI Solutions"
-                className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
-                height={100}
-                width={500}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent" />
-            </div>
-          </motion.div>
+            <motion.div
+              style={{
+                x: useTransform(
+                  x,
+                  [0, 500],
+                  [mousePosition.x * -0.1, mousePosition.x * 0.1],
+                ),
+                y: useTransform(
+                  y,
+                  [0, 500],
+                  [mousePosition.y * -0.1, mousePosition.y * 0.1],
+                ),
+                rotateX,
+                rotateY,
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
+              <motion.div
+                initial={{ y: -20 }}
+                animate={{ y: 20 }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                }}
+                className="relative h-96 w-full rounded-2xl overflow-hidden border-2 border-purple-500/30"
+              >
+                <Image
+                  src="/herorr.jpg" // Replace with your company image
+                  alt="Web3 & AI Solutions"
+                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+                  height={100}
+                  width={500}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent" />
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         <motion.div

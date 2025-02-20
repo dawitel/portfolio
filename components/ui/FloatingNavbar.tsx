@@ -8,6 +8,8 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import MagicButton from "../MagicButton";
+import { IoShieldCheckmarkSharp } from "react-icons/io5";
 
 type NavItem = {
   name: string;
@@ -56,7 +58,7 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
         animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.2 }}
         className={cn(
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
+          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-6", // Increased space-x from 4 to 6
           className,
         )}
         style={{
@@ -190,6 +192,15 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
             </Link>
           );
         })}
+        {/*
+        <div className="ml-4 flex items-center justify-center">
+          <MagicButton
+            title="Book a Call"
+            icon={<IoShieldCheckmarkSharp />}
+            position="right"
+            otherClasses="pt-3 pb-3 bg-blue-500 hover:bg-blue-600 transition-colors duration-300"
+          />
+        </div> */}
       </motion.div>
     </AnimatePresence>
   );
