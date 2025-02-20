@@ -135,7 +135,7 @@ export const navItems = [
   },
   { name: "Portfolio", link: "/portfolio" },
   { name: "Blog", link: "/blog" },
-  { name: "Contact", link: "#contact" },
+  { name: "Contact", link: "/contact" },
 ];
 
 export const gridItems = [

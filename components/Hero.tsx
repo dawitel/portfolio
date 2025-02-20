@@ -25,7 +25,7 @@ const Hero = () => {
   const rotateY = useTransform(x, [0, 500], [-5, 5]);
 
   return (
-    <div className="pb-20 pt-36 relative">
+    <div className="pb-20 pt-44 relative">
       <Spotlight
         className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
         fill="white"
@@ -38,9 +38,9 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
           {/* Left Text Section */}
-          <div className="md:w-1/2 space-y-6">
+          <div className="md:w-2/3 space-y-6">
             <h1 className="uppercase tracking-widest text-xs text-blue-500 font-semibold">
               Next-gen decentralized solutions
             </h1>
@@ -84,12 +84,12 @@ const Hero = () => {
                 x: useTransform(
                   x,
                   [0, 500],
-                  [mousePosition.x * -0.1, mousePosition.x * 0.1],
+                  [mousePosition.x * -0.01, mousePosition.x * 0.01],
                 ),
                 y: useTransform(
                   y,
                   [0, 500],
-                  [mousePosition.y * -0.1, mousePosition.y * 0.1],
+                  [mousePosition.y * -0.01, mousePosition.y * 0.01],
                 ),
                 rotateX,
                 rotateY,
