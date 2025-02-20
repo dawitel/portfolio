@@ -208,7 +208,7 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
         {/* Book a Call Button Section */}
         <div className="flex-shrink-0 mr-8">
           <Link href="/contact">
-            <Button className="bg-blue-500 hover:bg-blue-600 transition-colors font-semibold py-6 px-10 w-60">
+            <Button className="bg-blue-500 text-white hover:bg-blue-600 transition-colors font-semibold py-6 px-10 w-60">
               Book A Call
             </Button>
           </Link>
