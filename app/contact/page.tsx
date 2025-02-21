@@ -239,13 +239,13 @@ export default function ContactPage() {
                         <Button
                           type="button"
                           onClick={handleBack}
-                          className="w-full bg-gray-600 hover:bg-gray-700 transition-colors flex items-center justify-center"
+                          className="w-full bg-gray-600 hover:bg-gray-700 transition-colors flex items-center justify-center text-white"
                         >
                           <FaArrowLeft className="mr-2" /> Back
                         </Button>
                         <Button
                           type="submit"
-                          className="w-full bg-blue-500 hover:bg-blue-600 transition-colors"
+                          className="w-full bg-blue-500 hover:bg-blue-600 transition-colors text-white"
                         >
                           Schedule Call
                         </Button>
@@ -282,22 +282,6 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-6 text-center text-gray-400 border-t border-gray-800 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p>© 2023 Trivium Studios Ltd. All rights reserved.</p>
-          <p className="mt-2">
-            <a href="/privacy" className="hover:underline text-blue-400">
-              Privacy Policy
-            </a>{" "}
-            |{" "}
-            <a href="/terms" className="hover:underline text-blue-400">
-              Terms of Service
-            </a>
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

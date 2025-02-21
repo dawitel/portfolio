@@ -2,6 +2,7 @@
 
 import { navItems } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -12,6 +13,7 @@ export default function RootLayout({
     <div>
       <FloatingNav navItems={navItems} />
       {children}
+      <Footer />
     </div>
   );
 }
