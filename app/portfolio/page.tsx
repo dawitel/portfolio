@@ -155,7 +155,7 @@ export default function RecentProjectsPage() {
                   </p>
                   <Button
                     asChild
-                    className="bg-blue-500 hover:bg-blue-600 transition-colors px-8 py-5 text-lg font-semibold"
+                    className="bg-blue-500 hover:bg-blue-600 text-white transition-colors px-8 py-5 text-lg font-semibold"
                   >
                     <a href="/contact">
                       Schedule a Consultation <FaRocket className="ml-2" />
@@ -176,7 +176,7 @@ export default function RecentProjectsPage() {
           </p>
           <Button
             asChild
-            className="mt-6 bg-blue-500 hover:bg-blue-600 transition-colors px-6 py-3 text-lg font-semibold"
+            className="mt-6 bg-blue-500 hover:bg-blue-600 text-white transition-colors px-6 py-3 text-lg font-semibold"
           >
             <a href="/contact">
               Get in Touch <FaRocket className="ml-2" />
