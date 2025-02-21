@@ -7,11 +7,10 @@ import { PinContainer } from "./ui/Pin";
 import Image from "next/image";
 
 const RecentProjects = () => {
- 
   return (
     <div className="py-20">
       <h1 className="heading">
-        A small selection of my{" "}
+        A small selection of our{" "}
         <span className="text-purple">recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
@@ -65,7 +64,13 @@ const RecentProjects = () => {
                       }}
                     >
                       {/* TODO: migrate from native image taga to Image from Next JS */}
-                      <Image src={icon} width={45} height={45} alt="icon5" className="p-2" />
+                      <Image
+                        src={icon}
+                        width={45}
+                        height={45}
+                        alt="icon5"
+                        className="p-2"
+                      />
                     </div>
                   ))}
                 </div>
