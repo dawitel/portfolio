@@ -2,7 +2,7 @@ import { link } from "fs";
 
 export const navItems = [
   { name: "Home", link: "/" },
-  { name: "About", link: "#about" },
+  { name: "About", link: "/about" },
   {
     name: "AI Services",
     link: "#ai-services",
