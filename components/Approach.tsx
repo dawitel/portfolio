@@ -12,7 +12,7 @@ const Approach = () => {
           <span className="text-purple"> ideas </span>into
           <span className="text-purple"> reality</span>
         </h1>
-        <p className="text-white text-lg text-center">
+        <p className="text-gray-400 text-lg text-center">
           Over the years, we have refined and streamlined our processes to
           significantly reduce delivery timelines while maintaining the highest
           standards of quality. Our client-centric approach ensures that we not
