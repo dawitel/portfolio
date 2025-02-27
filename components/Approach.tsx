@@ -6,12 +6,20 @@ import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 const Approach = () => {
   return (
     <section className="w-full py-20">
-      <h1 className="heading text-3xl text-white">
-        How We <span className="text-purple">turn </span>your
-        <span className="text-purple"> ideas </span>into
-        <span className="text-purple"> reality</span>
-      </h1>
-      {/* remove bg-white dark:bg-black */}
+      <div className="flex flex-col gap-10 items-center justify-center">
+        <h1 className="heading text-3xl text-white">
+          How We <span className="text-purple">turn </span>your
+          <span className="text-purple"> ideas </span>into
+          <span className="text-purple"> reality</span>
+        </h1>
+        <p className="text-white text-lg text-center">
+          Over the years, we have refined and streamlined our processes to
+          significantly reduce delivery timelines while maintaining the highest
+          standards of quality. Our client-centric approach ensures that we not
+          only meet but exceed your expectations, delivering tailored solutions
+          precisely when you need them.
+        </p>
+      </div>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card

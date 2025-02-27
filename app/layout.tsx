@@ -7,12 +7,14 @@ import Lines from "@/components/lines";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { navItems } from "@/data";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/stickycta";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dawit Elias | Fullstack developer",
-  description: "Welcome to my world | Watch me turn ideas into reality",
+  title: "Trivium Studios Ltd.",
+  description:
+    "A software development company specializing in crafting cutting-edge AI and Web3 solutions that redefine industries",
 };
 
 export default function RootLayout({
@@ -35,6 +37,7 @@ export default function RootLayout({
           <FloatingNav navItems={navItems} />
 
           <Lines />
+          <StickyCTA />
           {children}
           <Footer />
         </ThemeProvider>

@@ -206,13 +206,12 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
         </div>
 
         {/* Book a Call Button Section */}
-        <div className="flex-shrink-0 mr-8">
-          <Link href="/contact">
-            <Button className="bg-blue-500 text-white hover:bg-blue-600 transition-colors font-semibold py-6 px-10 w-60">
-              Book A Call
-            </Button>
-          </Link>
-        </div>
+        <button className="relative inline-flex h-12.5 w-65 overflow-hidden rounded-lg p-[1px] focus:outline-none">
+          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+          <span className="inline-flex h-full w-full items-center justify-center rounded-lg bg-blue-900 hover:bg-blue-800 transition-colors text-white font-semibold py-3 px-10 backdrop-blur-3xl">
+            Book A Free Call
+          </span>
+        </button>
       </motion.div>
     </AnimatePresence>
   );

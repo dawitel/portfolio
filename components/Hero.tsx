@@ -50,7 +50,7 @@ const Hero = () => {
               className="text-3xl md:text-5xl lg:text-6xl font-bold text-left"
             />
 
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-lg md:text-xl text-gray-400 dark:text-gray-300">
               We specialize in crafting cutting-edge AI and Web3 solutions that
               redefine industries. From intelligent automation to decentralized
               applications, We empower businesses to innovate, scale, and thrive
@@ -108,9 +108,9 @@ const Hero = () => {
                 className="relative h-96 w-full rounded-2xl overflow-hidden border-2 border-purple-500/30"
               >
                 <Image
-                  src="/herorr.jpg" // Replace with your company image
+                  src="/herorr.jpg"
                   alt="Web3 & AI Solutions"
-                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+                  className="object-cover  w-full h-full transform hover:scale-105 transition-transform duration-300"
                   height={100}
                   width={500}
                 />
@@ -137,7 +137,7 @@ const Hero = () => {
           >
             <div className="text-4xl font-bold text-blue-400">50+</div>
             <div className="text-[20px] font-medium mt-2 text-gray-200">
-              AI Projects Deployed
+              AI and Web3 Projects Deployed
             </div>
           </div>
 
@@ -150,9 +150,9 @@ const Hero = () => {
                 "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
             }}
           >
-            <div className="text-4xl font-bold text-blue-400">$100M+</div>
+            <div className="text-4xl font-bold text-blue-400">5</div>
             <div className="text-[20px] font-medium mt-2 text-gray-200">
-              Transactions Secured
+              AI Experts
             </div>
           </div>
 
@@ -165,9 +165,9 @@ const Hero = () => {
                 "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
             }}
           >
-            <div className="text-4xl font-bold text-blue-400">98%</div>
+            <div className="text-4xl font-bold text-blue-400">20+</div>
             <div className="text-[20px] font-medium mt-2 text-gray-200">
-              Client Retention
+              Satisfied Clients Globally
             </div>
           </div>
 
@@ -180,9 +180,9 @@ const Hero = () => {
                 "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
             }}
           >
-            <div className="text-4xl font-bold text-blue-400">24/7</div>
+            <div className="text-4xl font-bold text-blue-400">4</div>
             <div className="text-[20px] font-medium mt-2 text-gray-200">
-              Blockchain Support
+              Blockchain Experts
             </div>
           </div>
         </motion.div>
